@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sending Simple Transactions | Mainchain Documentation</title>
+    <meta name="generator" content="VuePress 1.5.4">
+    
+    <meta name="description" content="Welcome to the documentation for Unification Mainchain">
+    <link rel="preload" href="/assets/css/0.styles.7eae06db.css" as="style"><link rel="preload" href="/assets/js/app.741cff61.js" as="script"><link rel="preload" href="/assets/js/2.77c7029e.js" as="script"><link rel="preload" href="/assets/js/12.f09b51f7.js" as="script"><link rel="prefetch" href="/assets/js/10.f37d54ff.js"><link rel="prefetch" href="/assets/js/11.9b05973b.js"><link rel="prefetch" href="/assets/js/13.385829a7.js"><link rel="prefetch" href="/assets/js/14.998374fc.js"><link rel="prefetch" href="/assets/js/15.14749093.js"><link rel="prefetch" href="/assets/js/16.70bcaf63.js"><link rel="prefetch" href="/assets/js/17.52701c2e.js"><link rel="prefetch" href="/assets/js/18.4717075d.js"><link rel="prefetch" href="/assets/js/19.8072ada9.js"><link rel="prefetch" href="/assets/js/20.a337da92.js"><link rel="prefetch" href="/assets/js/21.f6ac7b29.js"><link rel="prefetch" href="/assets/js/22.0b8e3f64.js"><link rel="prefetch" href="/assets/js/23.8d745efd.js"><link rel="prefetch" href="/assets/js/24.417b10a5.js"><link rel="prefetch" href="/assets/js/25.578a1199.js"><link rel="prefetch" href="/assets/js/26.cd5bb93a.js"><link rel="prefetch" href="/assets/js/27.b126edc4.js"><link rel="prefetch" href="/assets/js/28.e4a7ded3.js"><link rel="prefetch" href="/assets/js/29.6e1e7b98.js"><link rel="prefetch" href="/assets/js/3.edee95fc.js"><link rel="prefetch" href="/assets/js/30.ca3ce80a.js"><link rel="prefetch" href="/assets/js/31.4d9fb6a8.js"><link rel="prefetch" href="/assets/js/32.8a3a1f24.js"><link rel="prefetch" href="/assets/js/33.7ddc8051.js"><link rel="prefetch" href="/assets/js/34.9dcf1fa4.js"><link rel="prefetch" href="/assets/js/35.5ebf71ec.js"><link rel="prefetch" href="/assets/js/36.3a89ece3.js"><link rel="prefetch" href="/assets/js/4.6201d3d6.js"><link rel="prefetch" href="/assets/js/5.a58ba2da.js"><link rel="prefetch" href="/assets/js/6.7de9e217.js"><link rel="prefetch" href="/assets/js/7.01a03464.js"><link rel="prefetch" href="/assets/js/8.724889e8.js"><link rel="prefetch" href="/assets/js/9.ae3ae2f8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7eae06db.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/assets/img/unification_logoblack.png" alt="Mainchain Documentation" class="logo"> <span class="site-name can-hide">Mainchain Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/unification-com/mainchain/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Releases
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/unification-com/mainchain" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/unification-com/mainchain/releases" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Releases
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <a href="https://github.com/unification-com/mainchain" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>About Mainchain</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Install and Use the Software</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Networks</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Tx &amp; Query Examples</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/examples/transactions.html" aria-current="page" class="active sidebar-link">Sending Simple Transactions</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/examples/transactions.html#sending-a-transaction" class="sidebar-link">Sending a Transaction</a></li><li class="sidebar-sub-header"><a href="/examples/transactions.html#query-a-transaction" class="sidebar-link">Query a Transaction</a></li><li class="sidebar-sub-header"><a href="/examples/transactions.html#query-an-account" class="sidebar-link">Query an Account</a></li></ul></li><li><a href="/examples/wrkchain.html" class="sidebar-link">WRKChain Example</a></li><li><a href="/examples/beacon.html" class="sidebar-link">BEACON Example</a></li><li><a href="/examples/enterprise-fund.html" class="sidebar-link">Enterprise FUND Example</a></li><li><a href="/examples/finchain.html" class="sidebar-link">WRKChain: Finchains</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>In-depth Guides</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Developers</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="sending-simple-transactions"><a href="#sending-simple-transactions" class="header-anchor">#</a> Sending Simple Transactions</h1> <p>The <code>undcli</code> CMD can be used to generate, sign and broadcast new transactions
+to the network. It can also be used to query transactions, accounts and
+a variety of other network information.</p> <div class="custom-block warning"><p class="custom-block-title">IMPORTANT</p> <p>Whenever you use <code>undcli</code> to send Txs or query the chain ensure you pass the correct data to the <code>--chain-id</code> and if necessary <code>--node=</code> flags so that you connect to the correct network!</p></div> <h4 id="contents"><a href="#contents" class="header-anchor">#</a> Contents</h4> <p></p><div class="table-of-contents"><ul><li><a href="#sending-a-transaction">Sending a Transaction</a></li><li><a href="#query-a-transaction">Query a Transaction</a></li><li><a href="#query-an-account">Query an Account</a></li></ul></div><p></p> <h2 id="sending-a-transaction"><a href="#sending-a-transaction" class="header-anchor">#</a> Sending a Transaction</h2> <p>In this example, we'll generate and sign a simple <code>send</code> transaction, which will
+send 1 FUND. IF you have followed the documentation so far, you should already
+have the software installed, be running a full node, and have an account
+with funds.</p> <p>The <code>send</code> command is as follows:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>undcli tx send <span class="token punctuation">[</span>from_key_or_address<span class="token punctuation">]</span> <span class="token punctuation">[</span>to_address<span class="token punctuation">]</span> <span class="token punctuation">[</span>amount<span class="token punctuation">]</span> --chain-id <span class="token punctuation">[</span>chain_id<span class="token punctuation">]</span> --node<span class="token operator">=</span>tcp://<span class="token punctuation">[</span>ip<span class="token punctuation">]</span>:<span class="token punctuation">[</span>port<span class="token punctuation">]</span> --gas<span class="token operator">=</span>auto --gas-adjustment<span class="token operator">=</span><span class="token number">1.5</span> --gas-prices<span class="token operator">=</span><span class="token number">0</span>.25nund --trust-node <span class="token boolean">false</span>
+</code></pre></div><ul><li><code>[from_key_or_address]</code> - this can be either your account identifier, or your <code>bech32</code> address</li> <li><code>[to_address]</code> - the <code>bech32</code> address of the account you are sending FUND to</li> <li><code>[amount]</code> - the amount, in <code>nund</code></li> <li><code>[chain_id]</code> - the ID of the chain to run the transaction on</li> <li><code>[ip]:[port]</code> - the IP and Port of the RPC node to broadcast the Tx</li></ul> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>If you are running your own full node, you can set the <code>--trust-node</code> flag to <code>true</code>, which will tell <code>undcli</code> not to verify the proofs form the response.</p></div> <p>For example, we are running on DevNet, and would like to send 1 FUND from
+our account <code>und1eq239sgefyzm4crl85nfyvt7kw83vrna3f0eed</code>, to our friend's
+account <code>und1x8pl6wzqf9atkm77ymc5vn5dnpl5xytmn200xy</code>. We would
+therefore run:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>undcli tx send und1eq239sgefyzm4crl85nfyvt7kw83vrna3f0eed und1x8pl6wzqf9atkm77ymc5vn5dnpl5xytmn200xy 1000000000nund --chain-id FUND-Mainchain-DevNet --node<span class="token operator">=</span>tcp://172.25.0.3:26661 --gas<span class="token operator">=</span>auto --gas-adjustment<span class="token operator">=</span><span class="token number">1.5</span> --gas-prices<span class="token operator">=</span><span class="token number">0</span>.25nund --trust-node<span class="token operator">=</span>false
+</code></pre></div><p>You will be prompted for confirmation, along with your password for the account.</p> <p>If all goes well, the transaction will be broadcast and you should see a result
+similar to the following:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;height&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;txhash&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6FC93147D467E27C104BD68DADAC0CFD6AA130E37E8B29F6652570A891E38F71&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;raw_log&quot;</span><span class="token operator">:</span> <span class="token string">&quot;[]&quot;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>you can set the <code>--broadcast-mode</code> flag in the command to <code>block</code>. This will tell <code>undcli</code> to wait for the transaction to be processed in a block before returning the result. This will take up to 5-6 seconds to complete, but the Tx result will be included in the output.</p></div> <h2 id="query-a-transaction"><a href="#query-a-transaction" class="header-anchor">#</a> Query a Transaction</h2> <p>You can then query the transaction's progress and final result by running:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>undcli query tx 6FC93147D467E27C104BD68DADAC0CFD6AA130E37E8B29F6652570A891E38F71 --chain-id FUND-Mainchain-DevNet
+</code></pre></div><p>The output should be similar to:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;height&quot;</span><span class="token operator">:</span> <span class="token string">&quot;7&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;txhash&quot;</span><span class="token operator">:</span> <span class="token string">&quot;6FC93147D467E27C104BD68DADAC0CFD6AA130E37E8B29F6652570A891E38F71&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;raw_log&quot;</span><span class="token operator">:</span> <span class="token string">&quot;[{\&quot;msg_index\&quot;:0,\&quot;log\&quot;:\&quot;\&quot;,\&quot;events\&quot;:[{\&quot;type\&quot;:\&quot;message\&quot;,\&quot;attributes\&quot;:[{\&quot;key\&quot;:\&quot;action\&quot;,\&quot;value\&quot;:\&quot;send\&quot;},{\&quot;key\&quot;:\&quot;sender\&quot;,\&quot;value\&quot;:\&quot;und1eq239sgefyzm4crl85nfyvt7kw83vrna3f0eed\&quot;},{\&quot;key\&quot;:\&quot;module\&quot;,\&quot;value\&quot;:\&quot;bank\&quot;}]},{\&quot;type\&quot;:\&quot;transfer\&quot;,\&quot;attributes\&quot;:[{\&quot;key\&quot;:\&quot;recipient\&quot;,\&quot;value\&quot;:\&quot;und1x8pl6wzqf9atkm77ymc5vn5dnpl5xytmn200xy\&quot;},{\&quot;key\&quot;:\&quot;amount\&quot;,\&quot;value\&quot;:\&quot;100000000000nund\&quot;}]}]}]&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;logs&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;msg_index&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;log&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;events&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;message&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;attributes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;action&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;send&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;sender&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;und1eq239sgefyzm4crl85nfyvt7kw83vrna3f0eed&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;module&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;bank&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;transfer&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;attributes&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;recipient&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;und1x8pl6wzqf9atkm77ymc5vn5dnpl5xytmn200xy&quot;</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              <span class="token property">&quot;key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;amount&quot;</span><span class="token punctuation">,</span>
+              <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;100000000000nund&quot;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;gas_wanted&quot;</span><span class="token operator">:</span> <span class="token string">&quot;75420&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;gas_used&quot;</span><span class="token operator">:</span> <span class="token string">&quot;63558&quot;</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;tx&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cosmos-sdk/StdTx&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;msg&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cosmos-sdk/MsgSend&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;from_address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;und1eq239sgefyzm4crl85nfyvt7kw83vrna3f0eed&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;to_address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;und1x8pl6wzqf9atkm77ymc5vn5dnpl5xytmn200xy&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+              <span class="token punctuation">{</span>
+                <span class="token property">&quot;denom&quot;</span><span class="token operator">:</span> <span class="token string">&quot;nund&quot;</span><span class="token punctuation">,</span>
+                <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;100000000000&quot;</span>
+              <span class="token punctuation">}</span>
+            <span class="token punctuation">]</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;fee&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            <span class="token property">&quot;denom&quot;</span><span class="token operator">:</span> <span class="token string">&quot;nund&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1886&quot;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;gas&quot;</span><span class="token operator">:</span> <span class="token string">&quot;75420&quot;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;signatures&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;pub_key&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;tendermint/PubKeySecp256k1&quot;</span><span class="token punctuation">,</span>
+            <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token string">&quot;A1qL4KCBiGgrE/PYIrUtpN08HxA7+Up+Q7eh3XNbCdSD&quot;</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;signature&quot;</span><span class="token operator">:</span> <span class="token string">&quot;VLldGBkI0C3xcqwGShR2ImIc76btDGtW7QlEVfeDHuZtONIHDR5Ckf87wROazxqVw3rM35RvPgTyoj8VkVFV4w==&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;memo&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;timestamp&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2020-04-01T14:28:51Z&quot;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><h2 id="query-an-account"><a href="#query-an-account" class="header-anchor">#</a> Query an Account</h2> <p>Finally, to check that the funds have been sent and received, we can query the
+account:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>undcli query account und1x8pl6wzqf9atkm77ymc5vn5dnpl5xytmn200xy --chain-id FUND-Mainchain-DevNet
+</code></pre></div><p>Which will output a result similar to:</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;account&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;cosmos-sdk/Account&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;address&quot;</span><span class="token operator">:</span> <span class="token string">&quot;und1x8pl6wzqf9atkm77ymc5vn5dnpl5xytmn200xy&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;coins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          <span class="token property">&quot;denom&quot;</span><span class="token operator">:</span> <span class="token string">&quot;nund&quot;</span><span class="token punctuation">,</span>
+          <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;100400000000000&quot;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;public_key&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;account_number&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;sequence&quot;</span><span class="token operator">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;enterprise&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;locked&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;denom&quot;</span><span class="token operator">:</span> <span class="token string">&quot;nund&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;0&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;available_for_wrkchain&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token property">&quot;denom&quot;</span><span class="token operator">:</span> <span class="token string">&quot;nund&quot;</span><span class="token punctuation">,</span>
+        <span class="token property">&quot;amount&quot;</span><span class="token operator">:</span> <span class="token string">&quot;100400000000000&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h4 id="next"><a href="#next" class="header-anchor">#</a> Next</h4> <p>Example transactions for <a href="/examples/wrkchain.html">registering a WRKChain and submitting hashes</a></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">5/12/2020, 11:48:35 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/networks/participation.html" class="prev">
+        Non-Validator Participation
+      </a></span> <span class="next"><a href="/examples/wrkchain.html">
+        WRKChain Example
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.741cff61.js" defer></script><script src="/assets/js/2.77c7029e.js" defer></script><script src="/assets/js/12.f09b51f7.js" defer></script>
+  </body>
+</html>
